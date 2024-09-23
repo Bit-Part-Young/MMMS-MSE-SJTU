@@ -1,0 +1,133 @@
+site_name: 多尺度材料模拟与计算
+site_description: 多尺度材料模拟与计算
+site_url: https://mmms.seekanotherland.xyz/
+repo_name: Bit-Part-Young/MMMS-MSE-SJTU/
+repo_url: https://github.com/Bit-Part-Young/MMMS-MSE-SJTU/
+edit_uri: blob/main/docs/
+copyright: Copyright &copy 2024 非平衡凝固与亚稳材料课题组 材料科学与工程学院 上海交通大学
+
+
+theme:
+  name: material
+  language: zh
+  icon: 
+    logo: material/notebook-outline
+  features:
+    - content.tooltips
+    # 每个文档的顶部显示编辑和查看源码按钮
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+  # font:
+  #   code: Roboto Mono
+  #   text: Roboto
+  # palette:
+  # - scheme: default
+  # reference: https://github.com/HobbitQia/notebook/blob/note1/mkdocs.yml
+  palette:     #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default  #配色方案：浅色模式
+      # primary: brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      # accent: brown  #强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+      toggle:
+        icon: material/weather-sunny #图标，太阳
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  
+      scheme: slate  #配色方案：深色模式
+      # primary: Brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      toggle:
+        icon: material/weather-night  #图标，月亮
+        name: Switch to light mode
+
+
+extra:
+  social:
+    - name: GitHub
+      icon: fontawesome/brands/github
+      link: https://github.com/Bit-Part-Young
+    - name: Home
+      icon: fontawesome/solid/house-chimney
+      link: https://mmms.seekanotherland.xyz/
+
+
+# Extensions
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+
+# reference: https://github.com/TonyCrane/note/blob/master/mkdocs.yml
+extra_css:
+  - css/tasklist.css
+  # 公式渲染
+  - https://cdn.tonycrane.cc/utils/katex.min.css
+  # - https://gw.alipayobjects.com/os/k/font/lxgwwenkaiscreenr.css
+
+
+extra_javascript:
+  # 公式渲染
+  - https://cdn.tonycrane.cc/utils/katex.min.js
+  - js/katex.js
+
+
+plugins:
+  - search
+  - changelog
+  - statistics:
+      page_check_metadata: 
+  - mkdocs-jupyter
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+  - glightbox:
+      width: 80%
+
+
+nav:
+  - Home: 
+    - 课程介绍: mmms.md
+
+  - 上机实验:
+    - hands-on/index.md
+    - MD 课程材料使用指南: hands-on/md-handson-notes.md
+    - DFT 课程材料使用指南: hands-on/dft-handson-notes.md
+
+  - 作业问题:
+    - homework-questions/index.md
+    - homework-questions/mmms-homework-questions.md

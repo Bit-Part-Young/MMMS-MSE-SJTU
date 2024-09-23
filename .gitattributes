@@ -1,0 +1,6 @@
+*.md linguist-documentation=false linguist-detectable=true
+*.md linguist-language=Markdown
+*.html linguist-detectable=false
+*.js linguist-detectable=false
+*.css linguist-detectable=false
+
