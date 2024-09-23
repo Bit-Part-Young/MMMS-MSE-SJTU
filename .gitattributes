@@ -4,3 +4,6 @@
 *.js linguist-detectable=false
 *.css linguist-detectable=false
 
+*.jpg binary
+*.pdf binary
+*.png binary

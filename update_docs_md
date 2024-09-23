@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# 从 Obsidian md 文档中更新 MMMS-MSE-SJTU 的 docs md 文档
+
+repo_path="$HOME/scripts/sites/MMMS-MSE-SJTU"
+docs_path="${repo_path}/docs"
+
+docs_files=$(find "$docs_path" -type f -name "*.md")
+
+mmms_path="phd-related/TA-related/MMMS-related"
+obsd_path="${HOME}/scripts/obsidian-md/$mmms_path"
+if [[ "$HOSTNAME" =~ "DESKTOP" ]]; then
+    obsd_path="/mnt/e/obsidian-md/$mmms_path"
+elif [[ "$HOSTNAME" =~ "LAPTOP" ]]; then
+    obsd_path="/mnt/d/obsidian-md/$mmms_path"
+fi
+
+obsd_files=$(find "$obsd_path" -type f -name "*.md")
+
+for docs_file in $docs_files; do
+    docs_fn=$(basename "$docs_file")
+
+    if [[ ! "$docs_fn" =~ index.md ]]; then
+        for obsd_file in $obsd_files; do
+            obsd_fn=$(basename "$obsd_file")
+
+            if [[ "$docs_fn" == "$obsd_fn" ]]; then
+                # echo "cp $obsd_file to ${docs_file}"
+                cp "$obsd_file" "$docs_file"
+            fi
+        done
+    fi
+done
+
+
+git_update(){
+    git status --short --branch
+    echo
+    git add "$docs_path"
+    git commit -m "update docs"
+    echo
+}
+
+
+update_num(){
+    cd "$repo_path" || exit
+
+    update_md_num=$(git status --short --branch | grep -cE "\.md$")
+
+    if [[ $update_md_num -eq 0 ]]; then
+        echo -e "\nNo post md files are updated."
+    else
+        echo -e "\n${update_md_num} post md file(s) is(are) updated."
+        git_update
+    fi
+
+    cd - > /dev/null 2>&1 || exit
+}
+
+
+update_num
