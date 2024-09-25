@@ -24,9 +24,9 @@ for file in "${FILE_list[@]}"; do
                 s/\n/\n\n    /
             }' "$file"
 
-            echo "adolitions format has been converted to mkdocs-material format."
+            echo "$file admonitions format converted to mkdocs-material."
         else 
-            echo "No need."
+            echo "No need to convert."
         fi
 
     elif [[ "$OS_TYPE" == "Linux" ]]; then

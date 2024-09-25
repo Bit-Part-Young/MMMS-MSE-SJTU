@@ -11,11 +11,11 @@
 
 同学们好，今晚的课程为 DFT 部分上机实操课：
 
-1. 请同学们尽量都准备好笔记本电脑并充保持充足的电量（充电器也可以带上），条件允许的同学可以把排插带上。
-2. 本次上机实操课将涉及 DFT 性质计算（如晶格常数、能带、键长、空位形成能、表面能等）及 VASP 实操（如收敛性测试、静态计算、弛豫计算、能带计算、态密度计算等）等内容。
-3. **不同性质的计算，VASP 输入文件相关参数会有所不同，查阅官网手册了解参数设置含义，体会 “some practical concerns - First principles calculations within DFT” 课程内容的关联**。
-4. 在使用课程材料前，请先阅读该目录下的 `README` 文件内容来大致了解其使用说明、框架及功能，不要一开始就 “ 盲目 ” 进行操作（提交任务），以免出现不必要的错误。
-5. **使用课程材料过程中，请熟悉课程材料的目录及文件结构**！课程材料及该 Notes 均测试正常。
+1. 请同学们尽量都准备好笔记本电脑并充保持充足的电量（充电器也可以带上），条件允许的同学可以把排插带上
+2. 本次上机实操课将涉及 DFT 性质计算（如晶格常数、能带、键长、空位形成能、表面能等）及 VASP 实操（如收敛性测试、静态计算、弛豫计算、能带计算、态密度计算等）等内容
+3. **不同性质的计算，VASP 输入文件相关参数会有所不同，查阅官网手册了解参数设置含义，体会 “some practical concerns - First principles calculations within DFT” 课程内容的关联**
+4. 在使用课程材料前，请先阅读该目录下的 `README` 文件内容来大致了解其使用说明、框架及功能，不要一开始就 “盲目” 进行操作（提交任务），以免出现不必要的错误
+5. **使用课程材料过程中，请熟悉课程材料的目录及文件结构**！课程材料及该 Notes 均测试正常
 
 
 ---
@@ -23,8 +23,8 @@
 可能有帮助的一些教程链接：
 
 - 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料：[Course Materials for MSE6701H Multiscale Materials Modelling and Simulation](https://gitee.com/yangsl306/MMMS)
-- 《多尺度材料模拟与计算》课程作业相关问题：[MMMS-homework-questions](https://gitee.com/yangsl306/MMMS-homework-questions)
-- WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://seekanotherland.xyz/mkdocs-demo/linux/wsl-usage/)
+- 《多尺度材料模拟与计算》课程作业相关问题：[MMMS homework questions](https://mmms.seekanotherland.xyz/homework/mmms-homework-questions)
+- WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://nesmm-wiki.seekanotherland.xyz/linux/wsl-usage)
 - Linux 相关教程：[LINUX-TUTORIAL](https://dunwu.github.io/linux-tutorial/)
 - VASP INCAR 参数：[Category:INCAR tag - Vaspwiki](https://www.vasp.at/wiki/index.php/Category:INCAR_tag)
 - VASP POSCAR：[POSCAR - Vaspwiki](https://www.vasp.at/wiki/index.php/POSCAR)
@@ -37,7 +37,7 @@
 	- [ASE](https://wiki.fysik.dtu.dk/ase/)
 	- [latgen](https://github.com/lingtikong/latgen)
 	- [PyXtal](https://pyxtal.readthedocs.io/en/latest/)
-	- …
+	- ...
 
 
 

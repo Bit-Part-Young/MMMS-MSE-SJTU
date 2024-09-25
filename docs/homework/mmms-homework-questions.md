@@ -1,23 +1,20 @@
 # 《多尺度材料模拟与计算》课程作业相关问题
 
-- 作者：小小角色、走楼梯啊
-- 创建时间：2023.11.02
-- 网页版：[《多尺度材料模拟与计算》课程作业相关问题](https://seekanotherland.xyz/MMMS-homework-questions/)
-- 推荐在该 repo 中进行提问 [Issues - Github](https://github.com/Bit-Part-Young/MMMS-homework-questions/issues/new) / [Issues - Gitee](https://gitee.com/yangsl306/MMMS-homework-questions/issues/new)；私信问助教也可以
+**注意事项**：
 
----
-
-**请各位同学多熟悉 Linux 的基本命令并理解其含义，不建议直接运行命令！！！很多同学问的问题都源于此！**
+- 网页版：[《多尺度材料模拟与计算》课程作业相关问题](https://mmms.seekanotherland.xyz/homework/mmms-homework-questions/)
+- 推荐在该仓库中进行提问 [Issues - Github](https://github.com/Bit-Part-Young/MMMS-MSE-SJTU/issues/new) / [Issues - Gitee](https://gitee.com/yangsl306/MMMS-MSE-SJTU/issues/new)；私信问助教也可以
+- **请各位同学多熟悉 Linux 的基本命令并理解其含义，不建议直接运行命令！！！很多同学问的问题都源于此！**
 
 ---
 
 **相关教程链接**：
 
 - 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料：[Course Materials for MSE6701H Multiscale Materials Modelling and Simulation](https://gitee.com/yangsl306/MMMS)
-- WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://seekanotherland.xyz/mkdocs-demo/linux/wsl-usage)
+- WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://nesmm-wiki.seekanotherland.xyz/linux/wsl-usage)
 - Linux 相关教程：[LINUX-TUTORIAL](https://dunwu.github.io/linux-tutorial/)
-- Git 相关教程：[Git 使用 - Wiki of NES Lab](https://seekanotherland.xyz/mkdocs-demo/programming/git)
-- Miniconda3 使用教程：[Miniconda3 安装与使用 - Wiki of NES Lab](https://seekanotherland.xyz/mkdocs-demo/programming/python/miniconda3-usage)
+- Git 相关教程：[Git 使用 - Wiki of NES Lab](https://nesmm-wiki.sseekanotherland.xyz/programming/git)
+- Miniconda3 使用教程：[Miniconda3 安装与使用 - Wiki of NES Lab](https://nesmm-wiki.sseekanotherland.xyz/programming/python/miniconda3-usage)
 - LAMMPS Documentation：[LAMMPS documentation](https://docs.lammps.org/Manual.html)
 - LAMMPS 相关教程：[LAMMPS教程汇总 - lammps 加油站](https://mp.weixin.qq.com/s/fDKW__3D0dsY9aeJHQ-NMw)
 - VASP INCAR 参数：[Category:INCAR tag - Vaspwiki](https://www.vasp.at/wiki/index.php/Category:INCAR_tag)
@@ -31,7 +28,7 @@
 	- [ASE](https://wiki.fysik.dtu.dk/ase/)
 	- [latgen](https://github.com/lingtikong/latgen)
 	- [PyXtal](https://pyxtal.readthedocs.io/en/latest/)
-	- …
+	- ...
 
 ---
 
@@ -265,7 +262,7 @@ lattice      fcc 4.089 origin 0.0 0.0 0.0 orient x ... y ... z ...
 
 - **使用 `lattce` 命令的 `orient` 参数构建的处始表面模型，可以在 OVITO 中用 `CNA` 分析模型的上下表面及内部的原子类型（正常应是内部原子类型为 FCC，上下表面的原子类型为其他），以检验是否构建正确**；若需导出构建的初始表面模型，需要用到 `write_data` 命令：[write\_data command — LAMMPS documentation](https://docs.lammps.org/write_data.html)
 
-- 平衡晶格常数是晶体的基本性质之一，不会随要构建不同的表面模型而改变（**不要对表面模型再求一次所谓的 “ 平衡晶格常数 “**）
+- 平衡晶格常数是晶体的基本性质之一，不会随要构建不同的表面模型而改变（**不要对表面模型再求一次所谓的 “平衡晶格常数 “**）
 
 ---
 
