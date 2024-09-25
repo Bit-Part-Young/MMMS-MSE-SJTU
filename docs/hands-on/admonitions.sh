@@ -11,7 +11,7 @@ FILE_list=(
 
 for file in "${FILE_list[@]}"; do
     if [[ "$OS_TYPE" == "Darwin" ]]; then
-        if grep -q ":::" "$file"; then
+        if grep -q ':::' "$file"; then
             sed -i '' 's/:::danger/!!! danger ""/g' "$file"
             sed -i '' 's/:::info/!!! info ""/g' "$file"
             sed -i '' 's/:::warning/!!! warning ""/g' "$file"
