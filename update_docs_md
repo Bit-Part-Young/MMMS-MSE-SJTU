@@ -2,7 +2,7 @@
 
 # 从 Obsidian md 文档中更新 MMMS-MSE-SJTU 的 docs md 文档
 
-repo_path="$HOME/scripts/sites/MMMS-MSE-SJTU"
+repo_path="$HOME/scripts/TA/MMMS-MSE-SJTU"
 docs_path="${repo_path}/docs"
 
 docs_files=$(find "$docs_path" -type f -name "*.md")
@@ -31,6 +31,11 @@ for docs_file in $docs_files; do
         done
     fi
 done
+
+
+cd docs/hands-on || exit
+./admonitions.sh
+cd - > /dev/null 2>&1 || exit
 
 
 git_update(){
