@@ -5,8 +5,6 @@ repo_name: Bit-Part-Young/MMMS-MSE-SJTU/
 repo_url: https://github.com/Bit-Part-Young/MMMS-MSE-SJTU/
 edit_uri: blob/main/docs/
 copyright: Copyright &copy 2024 非平衡凝固与亚稳材料课题组 • 材料科学与工程学院 • 上海交通大学
-# 输出中文黑点
-
 
 
 theme:
@@ -122,7 +120,7 @@ plugins:
 
 
 nav:
-  - Home: 
+  - 首页: 
     - 课程介绍: mmms.md
 
   - 上机实验:
