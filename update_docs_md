@@ -7,7 +7,7 @@ docs_path="${repo_path}/docs"
 
 docs_files=$(find "$docs_path" -type f -name "*.md")
 
-mmms_path="phd-related/TA-related/MMMS-related"
+mmms_path="PhD/TA/MMMS-TA"
 obsd_path="${HOME}/scripts/obsidian-md/$mmms_path"
 if [[ "$HOSTNAME" =~ "DESKTOP" ]]; then
     obsd_path="/mnt/e/obsidian-md/$mmms_path"
