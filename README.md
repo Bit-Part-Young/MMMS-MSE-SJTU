@@ -17,8 +17,13 @@
 ## 课程相关内容
 
 - [课程网站](https://mmms.seekanotherland.xyz/)
+
 - [课程介绍](https://mmms.seekanotherland.xyz/mmms/)
+
 - [课程用代码](./scripts/)
+
 - [上机实验材料使用指南](https://mmms.seekanotherland.xyz/hands-on/)
+
 - [课程作业问题文档](https://mmms.seekanotherland.xyz/homework/)
+
 - 提问：推荐在仓库中进行提问 [Issues - Github](https://github.com/Bit-Part-Young/MMMS-MSE-SJTU/issues/new) / [Issues - Gitee](https://gitee.com/yangsl306/MMMS-MSE-SJTU/issues/new)；私信问助教也可以
