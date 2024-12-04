@@ -66,7 +66,7 @@ notice3: MD project 作业提交截止日期（每学年需更新）
 
 - LAMMPS Documentation：[LAMMPS documentation](https://docs.lammps.org/Manual.html)
 
-- LAMMPS 相关教程：[LAMMPS教程汇总 - lammps 加油站](https://mp.weixin.qq.com/s/fDKW__3D0dsY9aeJHQ-NMw)
+- LAMMPS 相关教程：[LAMMPS教程汇总 - LAMMPS 加油站](https://mp.weixin.qq.com/s/fDKW__3D0dsY9aeJHQ-NMw)
 
 - 模型构建相关开源程序
 	- [Atomsk](https://atomsk.univ-lille.fr/)
@@ -592,7 +592,7 @@ tree -LF 1
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
 
 
-- And now you can run the lammps calculation. If you are running on Siyuan cluster, you should use the commands:
+- And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
 ```bash
 sbatch job.slurm
@@ -675,7 +675,7 @@ cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/2-dislocation-rel
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
 
 
-- And now you can run the lammps calculation. If you are running on Siyuan cluster, you should use the commands:
+- And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
 ```bash
 sbatch job.slurm
