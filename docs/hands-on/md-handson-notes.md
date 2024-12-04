@@ -43,14 +43,20 @@ notice3: MD project 作业提交截止日期（每学年需更新）
     - Terminal（macOS 自带）
     - iTerm2（只支持 macOS）
 
-- 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料 Gitee 仓库：
-    - [MSE6701H: Course Materials for MSE6701H Multiscale Materials Modelling and Simulation. - sjtu_konglt - Gitee](https://gitee.com/sjtu_konglt/MMMS)
+- 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料 Gitee 仓库
+    - [MSE6701H: Course Materials for MSE6701H Multiscale Materials Modelling and Simulation. - sjtu_konglt - Gitee](https://gitee.com/sjtu_konglt/MSE6701H)
+    - [计算记录 - 仅供测试!!！](https://gitee.com/yangsl306/MSE6701H-data)
 
 - MD 课程材料使用指南
     - [Notes on MD hands-on session of MSE6701H-CHN - CodiMD](https://notes.sjtu.edu.cn/s/ULArhqGqt)
     - [MD 课程材料使用指南 - MMMS-MSE-SJTU](https://mmms.seekanotherland.xyz/hands-on/md-handson-notes/)
+    - [课程作业问题 - MMMS-MSE-SJTU](https://mmms.seekanotherland.xyz/homework/mmms-homework-questions/)
 
-- [MMMS-homework-questions: 《多尺度材料模拟与计算》课程作业相关问题](https://gitee.com/yangsl306/MMMS-homework-questions)
+- 《多尺度材料模拟与计算》英文班课程材料 Gitee 仓库及 Notes 链接
+    - [mmmsFall: This project contains all the input files for MMMS course](https://gitee.com/sjtu-liugs/mmmsfall)
+    - [Exercise 1: Molecular Statics Calculation of surface energy (MmmsFall) - CodiMD](https://notes.sjtu.edu.cn/s/IyNg-UPpq)
+    - [Exercise 2: Melting simulation by LAMMPS - CodiMD](https://notes.sjtu.edu.cn/s/KA8rqhSA2)
+    - [MD simulation of dislocation properties - CodiMD](https://notes.sjtu.edu.cn/s/1A_DCVJFV)
 
 - WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://seekanotherland.xyz/mkdocs-demo/linux/wsl-usage/)
 
@@ -580,7 +586,9 @@ tree -LF 1
 !!! danger ""
 
     If you are running this example on your own computer, you should:
+
 1. install `atomsk` on your computer;
+
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
 
 
@@ -595,13 +603,13 @@ squeue
 
     But if you are running on your own computer, you can use the following command instead:
 
+
 ```bash
 lmp -in in.lmp -sf opt
 
 # or
 mpirun -np 4 lmp -in in.lmp -sf opt
 ```
-
 
 - Once the calculation is done, you can check the `log.lammps` file for information:
 
@@ -678,13 +686,13 @@ squeue
 
     But if you are running on your own computer, you can use the following command instead:
 
+
 ```bash
 lmp -in in.lmp -sf opt
 
 # or
 mpirun -np 4 lmp -in in.lmp -sf opt
 ```
-
 
 - Once the calculation is done, you can check the `log.lammps` file for information:
 
@@ -762,7 +770,7 @@ cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/3-dislocation-she
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
 
 
-- And now you can run the lammps calculation. If you are running on Siyuan cluster, you should use the commands:
+- And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
 ```bash
 sbatch job.slurm
@@ -773,13 +781,13 @@ squeue
 
     But if you are running on your own computer, you can use the following command instead:
 
+
 ```bash
 lmp -in in.lmp -sf opt
 
 # or
 mpirun -np 4 lmp -in in.lmp -sf opt
 ```
-
 
 - Once the calculation is done, you can check the `Info.dat` file for information:
 
