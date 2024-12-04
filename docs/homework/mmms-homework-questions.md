@@ -23,12 +23,12 @@
 - VASP 赝势推荐：[Available PAW potentials - Vaspwiki](https://www.vasp.at/wiki/index.php/Available_PAW_potentials#Recommended_potentials_for_DFT_calculations)
 - VASPKIT Features: [Features — VASPKIT 1.4 documentation](https://vaspkit.com/features.html)
 - 模型构建相关开源程序
-	- [Atomsk](https://atomsk.univ-lille.fr/)
-	- [pymatgen](https://pymatgen.org/)
-	- [ASE](https://wiki.fysik.dtu.dk/ase/)
-	- [latgen](https://github.com/lingtikong/latgen)
-	- [PyXtal](https://pyxtal.readthedocs.io/en/latest/)
-	- ...
+    - [Atomsk](https://atomsk.univ-lille.fr/)
+    - [pymatgen](https://pymatgen.org/)
+    - [ASE](https://wiki.fysik.dtu.dk/ase/)
+    - [latgen](https://github.com/lingtikong/latgen)
+    - [PyXtal](https://pyxtal.readthedocs.io/en/latest/)
+    - ...
 
 ---
 
