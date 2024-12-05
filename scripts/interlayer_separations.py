@@ -48,7 +48,11 @@ def interlayer_separations_cal(
     distance_init, layer_init_count = get_distance(atoms_init, precision)
 
     if layer_final_count != layer_init_count:
-        raise ValueError("Layer count of two structures is different! Exit.")
+        raise ValueError(
+            "Layer count of two structures is different! Exit. "
+            "Maybe the Final structure xy plane is not perpendicular to z axis. "
+            "Please check it!"
+        )
     else:
         interlayer_separations = distance_final - distance_init
         ratio = (100 * (interlayer_separations / distance_init)).round(2)
