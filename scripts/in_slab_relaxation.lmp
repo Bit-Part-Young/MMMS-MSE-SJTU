@@ -1,0 +1,50 @@
+# reference: https://gitee.com/sjtu_konglt/MSE6701H
+
+# Relaxation of surface configuration
+units        metal
+boundary     p p p
+atom_style   atomic
+
+##################################################################
+#     除 (100) 面外，内置命令生成的表面构型在 OVITO 中 CNA 识别         #
+#     其在 xz 或 yz 平面上边缘的几个原子层也会被识别为表面，不符合预期     #
+#     不建议使用 LAMMPS 内置命令生成表面构型                           #
+#     建议使用 atomsk 或 ASE build 模块生成表面构型                   #
+##################################################################
+# lattice      fcc 3.615
+# region       box  block 0 10 0 10 0 20
+# region       fill block 0 10 0 10 6 14
+# create_box   1 box
+# create_atoms 1 region fill
+
+# 读取构型文件
+read_data   Cu_100.lmp
+# read_data   Cu_110.lmp
+# read_data   Cu_111.lmp
+
+# Potential
+pair_style   eam
+pair_coeff   * * Cu_u6.eam
+
+neighbor     0.2 bin
+neigh_modify delay 5
+
+# Surface area; there are two surfaces, hence the factor of 2.
+variable     area equal "2.* lx * ly"
+
+# -3.54 eV/atom for bulk Cu, for different element, one should determine this value first.
+variable     delE equal "pe + atoms * 3.54"
+
+# Thermal and trajectory
+thermo_style custom step pe pxx pyy pzz
+thermo       10
+
+dump         1 all atom 1000 dump.lammpstrj
+
+# Minimization
+min_style    cg
+minimize     1e-12 1e-12 1000 10000
+
+# Output the energy
+variable     gamma equal "v_delE / v_area"
+print        "The calculated surface energy is: ${gamma} eV/Ang^2."
