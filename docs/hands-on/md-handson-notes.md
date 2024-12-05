@@ -66,7 +66,7 @@ notice3: MD project 作业提交截止日期（每学年需更新）
 
 - LAMMPS Documentation：[LAMMPS documentation](https://docs.lammps.org/Manual.html)
 
-- LAMMPS 相关教程：[LAMMPS教程汇总 - LAMMPS 加油站](https://mp.weixin.qq.com/s/fDKW__3D0dsY9aeJHQ-NMw)
+- LAMMPS 相关教程：[LAMMPS教程汇总 - lammps 加油站](https://mp.weixin.qq.com/s/fDKW__3D0dsY9aeJHQ-NMw)
 
 - 模型构建相关开源程序
 	- [Atomsk](https://atomsk.univ-lille.fr/)
@@ -172,10 +172,12 @@ scp -P 22 -r LocalFolderName stuXXX@sydata.hpc.sjtu.edu.cn:/dssg/home/acct-stu/s
 
 ## 1.3. Retrieving of Course Materials
 
-- Once login Siyun, **you can run the following commands on your shell**, it will automatically git clone MMMS Course Materials `MSE6701H` to your home directory on Siyuan.
+- **If you can't login Siyuan in class, you can visit MMMS Course Materials Gitee repo**:  https://gitee.com/sjtu_konglt/MSE6701H
+
+- Once login Siyuan, **you can run the following commands on your shell**, it will automatically git clone MMMS Course Materials `MSE6701H` to your home directory on Siyuan.
 
 ```bash
-git clone https://gitee.com/sjtu_konglt/MSE6701H.git .
+git clone https://gitee.com/sjtu_konglt/MSE6701H.git
 ```
 
 
@@ -295,9 +297,7 @@ more log.lammps
 - **You can find the equilibrium lattice constant** of fcc Cu by fitting the obtained `ev.dat` to [Murnaghan's Equation of States](http://www.sklogwiki.org/SklogWiki/index.php/Murnaghan_equation_of_state).
 
 ```bash
-../0-tools/eos_fit_md ev.dat 2 3
-# or
-eos_fit_md ev.dat 2 3
+../0-tools/eos_fit ev.dat 2 3
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212215101.png)
@@ -868,9 +868,9 @@ Hint:
 
 - The possible potentials for Au could be found here: https://www.ctcms.nist.gov/potentials/system/Au/. You can adopt any potential you prefer, but please specify explicitly.
 
-- If you'd like to create configuration and orient axes with LAMMPS internal commands, you can use `lattice` command with `orient` keyword: [lattice command — LAMMPS documentation](https://docs.lammps.org/lattice.html).
+- If you'd like to create surface configuration correctly, use atomsk tool or ASE `build` module (you can refer `surface_generation_ase.py`, `surface_generation_atomsk.sh` and `in_slab_relaxation.lmp` codes in https://gitee.com/yangsl306/MMMS-MSE-SJTU/tree/main/scripts: ). Do not use LAMMPS internal command `lattice` with `orient` keyword ([lattice command — LAMMPS documentation](https://docs.lammps.org/lattice.html))!
 
-- You are advised to present the surface models and specific three axes in the report (You can use OVITO or VESTA to visualize configuration).
+- You are advised to **present the surface models and specific three axes in the report** (You can use OVITO or VESTA to visualize configuration).
 
 
 
