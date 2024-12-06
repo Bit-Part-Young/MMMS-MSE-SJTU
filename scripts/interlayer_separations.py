@@ -48,10 +48,26 @@ def interlayer_separations_cal(
     distance_init, layer_init_count = get_distance(atoms_init, precision)
 
     if layer_final_count != layer_init_count:
+
+        data = {
+            "Layer_Distance_Init": distance_init,
+        }
+        index = [f"{i}-{i+1}" for i in range(1, len(distance_init) + 1)]
+
+        df = pd.DataFrame(
+            data=data,
+            index=index,
+        )
+
+        # 逆序
+        df = df[::-1]
+
+        print(df)
+
         raise ValueError(
-            "Layer count of two structures is different! Exit. "
+            "Layer count of two structures is different. "
             "Maybe the Final structure xy plane is not perpendicular to z axis. "
-            "Please check it!"
+            "Please check it! Exit!"
         )
     else:
         interlayer_separations = distance_final - distance_init
