@@ -172,7 +172,7 @@ scp -P 22 -r LocalFolderName stuXXX@sydata.hpc.sjtu.edu.cn:/dssg/home/acct-stu/s
 
 ## 1.3. Retrieving of Course Materials
 
-- **If you can't login Siyuan in class, you can visit MMMS Course Materials Gitee repo**:  https://gitee.com/sjtu_konglt/MSE6701H
+- **If you can't login Siyuan in class, you can visit MMMS Course Materials Gitee repo**: https://gitee.com/sjtu_konglt/MSE6701H
 
 - Once login Siyuan, **you can run the following commands on your shell**, it will automatically git clone MMMS Course Materials `MSE6701H` to your home directory on Siyuan.
 
@@ -868,9 +868,9 @@ Hint:
 
 - The possible potentials for Au could be found here: https://www.ctcms.nist.gov/potentials/system/Au/. You can adopt any potential you prefer, but please specify explicitly.
 
-- If you'd like to create surface configuration correctly, use atomsk tool or ASE `build` module (you can refer `surface_generation_ase.py`, `surface_generation_atomsk.sh` and `in_slab_relaxation.lmp` codes in https://gitee.com/yangsl306/MMMS-MSE-SJTU/tree/main/scripts: ). Do not use LAMMPS internal command `lattice` with `orient` keyword ([lattice command — LAMMPS documentation](https://docs.lammps.org/lattice.html))!
+- If you'd like to create surface configuration correctly, use atomsk tool or ASE `build` module (you can refer `surface_generation_ase.py`, `surface_generation_atomsk.sh` and `in_slab_relaxation.lmp` codes in https://gitee.com/yangsl306/MMMS-MSE-SJTU/tree/main/scripts:). Do not use LAMMPS internal command `lattice` with `orient` keyword ([lattice command — LAMMPS documentation](https://docs.lammps.org/lattice.html))!
 
-- You are advised to **present the surface models and specific three axes in the report** (You can use OVITO or VESTA to visualize configuration).
+- You are advised to **present the surface models (use "Common neighbor analysis" Modification in OVITO) and specific three axes in the report** (You can use OVITO or VESTA to visualize configuration).
 
 
 
