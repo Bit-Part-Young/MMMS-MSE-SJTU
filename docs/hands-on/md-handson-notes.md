@@ -180,7 +180,6 @@ scp -P 22 -r LocalFolderName stuXXX@sydata.hpc.sjtu.edu.cn:/dssg/home/acct-stu/s
 git clone https://gitee.com/sjtu_konglt/MSE6701H.git
 ```
 
-
 - If you have cloned the Course Materials, then just git pull to get latest commit.
 
 ```bash

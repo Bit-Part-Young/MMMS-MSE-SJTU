@@ -1,3 +1,7 @@
+---
+notice1: DFT project 作业提交截止日期（每学年需更新）
+---
+
 # Notes on DFT hands-on session of MSE6701H-CHN
 
 **Content:**
@@ -7,30 +11,47 @@
 
 ---
 
-## 0. Notice
+## 0.0 Notice
 
 同学们好，今晚的课程为 DFT 部分上机实操课：
 
-1. 请同学们尽量都准备好笔记本电脑并充保持充足的电量（充电器也可以带上），条件允许的同学可以把排插带上
-2. 本次上机实操课将涉及 DFT 性质计算（如晶格常数、能带、键长、空位形成能、表面能等）及 VASP 实操（如收敛性测试、静态计算、弛豫计算、能带计算、态密度计算等）等内容
-3. **不同性质的计算，VASP 输入文件相关参数会有所不同，查阅官网手册了解参数设置含义，体会 “some practical concerns - First principles calculations within DFT” 课程内容的关联**
-4. 在使用课程材料前，请先阅读该目录下的 `README` 文件内容来大致了解其使用说明、框架及功能，不要一开始就 “盲目” 进行操作（提交任务），以免出现不必要的错误
-5. **使用课程材料过程中，请熟悉课程材料的目录及文件结构**！课程材料及该 Notes 均测试正常
+1. 请同学们尽量都准备好笔记本电脑并充保持充足的电量（充电器也可以带上），条件允许的同学可以把排插带上。
+
+2. 本次上机实操课将涉及 DFT 性质计算（如晶格常数、能带、键长、空位形成能、表面能等）及 VASP 实操（如收敛性测试、静态计算、弛豫计算、能带计算、态密度计算等）等内容。
+
+3. **不同性质的计算，VASP 输入文件相关参数会有所不同，查阅官网手册了解参数设置含义，体会 “some practical concerns - First principles calculations within DFT” 课程内容的关联**。
+
+4. 在使用课程材料前，请先阅读该目录下的 `README` 文件内容来大致了解其使用说明、框架及功能，不要一开始就 “盲目” 进行操作（提交任务），以免出现不必要的错误。
+
+5. **使用课程材料过程中，请熟悉课程材料的目录及文件结构**！课程材料及该 Notes 均测试正常。
+
 
 
 ---
 
+## 0.1 Helpful things
+
 可能有帮助的一些教程链接：
 
-- 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料：[Course Materials for MSE6701H Multiscale Materials Modelling and Simulation](https://gitee.com/yangsl306/MMMS)
-- 《多尺度材料模拟与计算》课程作业相关问题：[MMMS homework questions](https://mmms.seekanotherland.xyz/homework/mmms-homework-questions)
-- WSL 安装与使用：[WSL 安装与使用 - Wiki of NES Lab](https://nesmm-wiki.seekanotherland.xyz/linux/wsl-usage)
-- Linux 相关教程：[LINUX-TUTORIAL](https://dunwu.github.io/linux-tutorial/)
+- 《多尺度材料模拟与计算》课程 MD、DFT 部分实验材料 Gitee 仓库
+    - [MSE6701H: Course Materials for MSE6701H Multiscale Materials Modelling and Simulation. - sjtu_konglt - Gitee](https://gitee.com/sjtu_konglt/MSE6701H)
+    - [计算记录 - 仅供测试!!！](https://gitee.com/yangsl306/MSE6701H-data)
+
+- DFT 课程材料使用指南
+    - [Notes on DFT hands-on session of MSE6701H-CHN - CodiMD](https://notes.sjtu.edu.cn/s/9E7kJFgvi)
+    - [DFT 课程材料使用指南 - MMMS-MSE-SJTU](https://mmms.seekanotherland.xyz/hands-on/dft-handson-notes/)
+    - [课程作业问题 - MMMS-MSE-SJTU](https://mmms.seekanotherland.xyz/homework/mmms-homework-questions/)
+
 - VASP INCAR 参数：[Category:INCAR tag - Vaspwiki](https://www.vasp.at/wiki/index.php/Category:INCAR_tag)
+
 - VASP POSCAR：[POSCAR - Vaspwiki](https://www.vasp.at/wiki/index.php/POSCAR)
+
 - VASP KPOINTS：[KPOINTS - Vaspwiki](https://www.vasp.at/wiki/index.php/KPOINTS)
+
 - VASP 赝势推荐：[Available PAW potentials - Vaspwiki](https://www.vasp.at/wiki/index.php/Available_PAW_potentials#Recommended_potentials_for_DFT_calculations)
+
 - VASPKIT Features: [Features — VASPKIT 1.5 documentation](https://vaspkit.com/features.html)
+
 - 模型构建相关开源程序
     - [Atomsk](https://atomsk.univ-lille.fr/)
     - [pymatgen](https://pymatgen.org/)
@@ -56,28 +77,20 @@ If you forget how to access the Siyuan cluster, please refer to the [manual for 
 
 ### 1.2. Update MMMS Course Materials
 
-update(`git pull`) the latest MMMS Course Materials
+- Update(`git pull`) the latest MMMS Course Materials
+
 ```bash
-cd ~/MSE6701H/MMMS
+cd ~/MSE6701H
 
 git pull
 ```
 
+- or
 
-or
 ```bash
-cd ~/MSE6701H
-mv MMMS MMMS-bk  # any name you like
+cd ~
+mv MSE6701H MSE6701H-bk  # any name you like
 git clone https://gitee.com/yangsl306/MMMS.git
-```
-
-
-**Optional**: add DFT and MD part tools path to `~/.bashrc` file, then `source ~/.bashrc`.
-```bash
-# MD part tools
-export PATH=$PATH:$HOME/MSE6701H/MMMS/2-MolecularDynamics/0-tools
-# DFT part tools
-export PATH=$PATH:$HOME/MSE6701H/MMMS/3-DFT/0-tools
 ```
 
 
@@ -90,26 +103,28 @@ export PATH=$PATH:$HOME/MSE6701H/MMMS/3-DFT/0-tools
 
 #### 2.1.1. Without convergence test
 
-Get into the first example
+- Get into the first example
+
 ```bash
-cd ~/MSE6701H/MMMS/3-DFT/1-Convergence-Tests
+cd ~/MSE6701H/3-DFT/1-Convergence-Tests
 
 ll
 ```
 
-it should look like:
+- it should look like:
 
 ![Snipaste_2023-11-20_20-55-58.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311202110362.png)
 
+- We'll first try to carry out the calculation without convergence test. Get into the corresponding directory
 
-We'll first try to carry out the calculation without convergence test. Get into the corresponding directory
 ```bash
 cd 1-without-convergence-test
 
 tree
 ```
 
-directory structure:
+- directory structure:
+
 ```txt
 .
 ├── INCAR
@@ -132,13 +147,14 @@ cat README
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
+- Once the job is completed, you can check the results(Total energy) in `OUTCAR` or `OSZICAR`.
 
-Once the job is completed, you can check the results(Total energy) in `OUTCAR` or `OSZICAR`.
 ```bash
 grep 'free  energy' OUTCAR
 # or
@@ -147,14 +163,13 @@ tail -1 OSZICAR
 
 !!! danger ""
 
-    NOTE: there are exactly two spaces between “free” and “energy”.
+    NOTE: there are exactly two spaces between 'free' and 'energy'.
 
 
 ![Snipaste_2023-11-20_21-14-22.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311202114769.png)
 
----
+- (**Optional**) Get the total k-points
 
-(**Optional**) Get the total k-points
 ```bash
 head -n 38 IBZKPT | tail -n 35 | awk '{sum+=$4} END {print sum}'
 ```
@@ -164,11 +179,12 @@ head -n 38 IBZKPT | tail -n 35 | awk '{sum+=$4} END {print sum}'
 
 #### 2.1.2. Convergence test with respect to k-mesh size
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../2-convergence-k-mesh
 # or
-cd ~/MSE6701H/MMMS/3-DFT/1-Convergence-Tests/2-convergence-k-mesh
+cd ~/MSE6701H/3-DFT/1-Convergence-Tests/2-convergence-k-mesh
 
 ls -l
 ```
@@ -184,24 +200,25 @@ cat README
 cat job.slurm
 ```
 
-Run your job
+- Run your job
+
 ```bash
 sbatch job.slurm
 ```
 
-Once completed, check the `eng_k.dat` file for the convergence information
+- Once completed, check the `eng_k.dat` file for the convergence information
+
 ```bash
 cat eng_k.dat
 ```
 
-And you can use the `check_conv_k` script prepared to visualize the convergence information:
+- And you can use the `check_conv_k` script prepared to visualize the convergence information:
+
 ```bash
 ../../0-tools/check_conv_k
-# or
-check_conv_k
 ```
 
-A figure should be shown to visualize the convergence information.
+- A figure should be shown to visualize the convergence information.
 
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212158380.png)
@@ -211,11 +228,12 @@ A figure should be shown to visualize the convergence information.
 
 #### 2.1.3. Convergence test with respect to plane wave cutoff energy
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../3-convergence-ecut
 # or
-cd ~/MSE6701H/MMMS/3-DFT/1-Convergence-Tests/3-convergence-ecut
+cd ~/MSE6701H/3-DFT/1-Convergence-Tests/3-convergence-ecut
 
 ls -l
 ```
@@ -231,25 +249,25 @@ cat README
 cat job.slurm
 ```
 
-Run the calculations, it might take some time
+- Run the calculations, it might take some time
+
 ```bash
 sbatch job.slurm
 ```
 
-Once the calculation is completed, check the `eng_ecut.dat` file for the convergence information
+- Once the calculation is completed, check the `eng_ecut.dat` file for the convergence information
+
 ```bash
 cat eng_ecut.dat
 ```
 
-You can also use the `check_conv_ecut` script prepared to visualize the convergence information:
+- You can also use the `check_conv_ecut` script prepared to visualize the convergence information:
+
 ```bash
 ../../0-tools/check_conv_ecut
-# or
-check_conv_ecut
 ```
 
-A figure should be shown to visualize the convergence information.
-
+- A figure should be shown to visualize the convergence information.
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212200876.png)
 
@@ -258,19 +276,22 @@ A figure should be shown to visualize the convergence information.
 
 #### With convergence test
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../4-with-optimized-k-ecut
 # or
-cd ~/MSE6701H/MMMS/3-DFT/1-Convergence-Tests/4-with-optimized-k-ecut
+cd ~/MSE6701H/3-DFT/1-Convergence-Tests/4-with-optimized-k-ecut
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-Once completed, check the `OUTCAR` for the information. Compare the energy to that without convergence test
+- Once completed, check the `OUTCAR` for the information. Compare the energy to that without convergence test
+
 ```bash
 grep 'free  energy' ../1-without-convergence-test/OUTCAR
 grep 'free  energy' OUTCAR
@@ -285,11 +306,12 @@ grep 'free  energy' OUTCAR
 
 #### 2.2.1. FCC Cu
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../../2-Lattice-Constant/1-FCC-Cu
 # or
-cd ~/MSE6701H/MMMS/3-DFT/2-Lattice-Constant/1-FCC-Cu
+cd ~/MSE6701H/3-DFT/2-Lattice-Constant/1-FCC-Cu
 ```
 
 !!! danger ""
@@ -297,23 +319,24 @@ cd ~/MSE6701H/MMMS/3-DFT/2-Lattice-Constant/1-FCC-Cu
     Please read through all the main input files of vasp, especially `INCAR`
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Find the equilibrium lattice constant**: Once the job is completed, you should find a file named `eng_a.dat` with contents under your directory, you can fit the data to an [Equation of States](http://www.sklogwiki.org/SklogWiki/index.php/Murnaghan_equation_of_state) and obtain the equilibrium lattice constant by:
+- **Find the equilibrium lattice constant**: Once the job is completed, you should find a file named `eng_a.dat` with contents under your directory, you can fit the data to an [Equation of States](http://www.sklogwiki.org/SklogWiki/index.php/Murnaghan_equation_of_state) and obtain the equilibrium lattice constant by:
+
 ```bash
 ../../0-tools/eos_fit eng_a.dat
-# or
-eos_fit eng_a.dat
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212152737.png)
@@ -321,12 +344,12 @@ eos_fit eng_a.dat
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212157853.png)
 
 
-
 ---
 
 #### 2.2.2. BCC Fe
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../2-BCC-Fe
 # or
@@ -338,31 +361,29 @@ cd ~/MSE6701H/MMMS/3-DFT/2-Lattice-Constant/2-BCC-Fe
     Please read through all the main input files of vasp, especially `INCAR`
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-Find the equilibrium lattice constant
+- Find the equilibrium lattice constant
+
 ```bash
 ../../0-tools/eos_fit eng_a.dat
-# or
-eos_fit eng_a.dat
 ```
-
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212204518.png)
 
-
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212155859.png)
-
 
 
 ---
@@ -382,11 +403,12 @@ For band structure calculations, generally one should perform two (or three if D
 
 #### 2.3.1. FCC Cu
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../../3-Band-Structure/1-FCC-Cu
 # or
-cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/1-FCC-Cu
+cd ~/MSE6701H/3-DFT/3-Band-Structure/1-FCC-Cu
 ```
 
 !!! danger ""
@@ -394,52 +416,51 @@ cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/1-FCC-Cu
     Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`. The three `INCARs` and three `KPOINTSs` correspond to the scf and nscf calculations, respectively.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
 ```bash
 sbatch job.slurm
 ```
 
-**Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+- **Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+
 ```bash
 ../../0-tools/plot_cu_bs
-# or
-plot_cu_bs
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212206550.png)
 
+- You should also be able to get the electronic DOS via the following command:
 
-You should also be able to get the electronic DOS via the following command:
 ```bash
 ../../0-tools/plot_cu_dos
-# or
-plot_cu_dos
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212205472.png)
-
 
 !!! danger ""
 
     Note: The Fermi energy has been shifted to be zero.
 
 
+
 ---
 
 #### 2.3.2. BCC Fe
 
-Get into the directory
+- Get into the directory
+
 ```bash
-cd ../2-BCC-Fe           
+cd ../2-BCC-Fe
 # or
-cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/2-BCC-Fe
+cd ~/MSE6701H/3-DFT/3-Band-Structure/2-BCC-Fe
 ```
 
 !!! danger ""
@@ -447,33 +468,33 @@ cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/2-BCC-Fe
     Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
-cat README         
+cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+- **Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+
 ```bash
 ../../0-tools/plot_fe_bs
-# or
-plot_fe_bs
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212206483.png)
 
 
-You should also be able to get the electronic DOS via the following command:
+- You should also be able to get the electronic DOS via the following command:
+
 ```bash
 ../../0-tools/plot_fe_dos
-# or
-plot_fe_dos
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212207250.png)
@@ -483,17 +504,17 @@ plot_fe_dos
 
 #### 2.3.3. Graphene
 
-Graphene structure:
+- Graphene structure:
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311301044329.png)
 
-
 ---
 
-Get into the directory
+- Get into the directory
+
 ```bash
-cd ../3-Graphene/            
-cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/3-Graphene
+cd ../3-Graphene/
+cd ~/MSE6701H/3-DFT/3-Band-Structure/3-Graphene
 ```
 
 !!! danger ""
@@ -501,29 +522,30 @@ cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/3-Graphene
     Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+- **Examine the band structure and DOS**: Once the job is completed, you should be able to get the band structure via the following command:
+
 ```bash
 ../../0-tools/plot_graphene_bs
-# or
-plot_graphene_bs
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212208994.png)
 
+- You should also be able to get the electronic DOS via the following command:
 
-You should also be able to get the electronic DOS via the following command:
 ```bash
 ../../0-tools/plot_graphene_dos
 # or
@@ -545,11 +567,12 @@ It has periodicity along **x** direction, while free boundary (supercell) condit
 
 ---
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../4-Polyhexene/
 # or
-cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/4-Polyhexene
+cd ~/MSE6701H/3-DFT/3-Band-Structure/4-Polyhexene
 ```
 
 !!! danger ""
@@ -557,23 +580,24 @@ cd ~/MSE6701H/MMMS/3-DFT/3-Band-Structure/4-Polyhexene
     Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat run
 # or
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Examine the band structure**: Once the job is completed, you should be able to get the band structure via the following command:
+- **Examine the band structure**: Once the job is completed, you should be able to get the band structure via the following command:
+
 ```bash
 ../../0-tools/plot_polyethylene_bs
-# or
-plot_polyethylene_bs
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212210435.png)
@@ -585,21 +609,24 @@ plot_polyethylene_bs
 
 #### 2.4.1. Ground state of H atom
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../../4-Bond-Length/1-H-atom
 # or
-cd ~/MSE6701H/MMMS/3-DFT/4-Bond-Length/1-H-atom
+cd ~/MSE6701H/3-DFT/4-Bond-Length/1-H-atom
 ```
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
@@ -609,72 +636,75 @@ sbatch job.slurm
     Note: Since we are calculating a single isolated atom, a large supercell is used, and no periodicity is expected. Therefore we use only the $\Gamma$ k-point. And since the supercell is large, many $\mathbf{G}$ are within the cutoff radius and in turn the calculation will take some time.
 
 
-**Examine the energy level**: Once the job is completed, you should be able to get the energy level via the following command:
+- **Examine the energy level**: Once the job is completed, you should be able to get the energy level via the following command:
+
 ```bash
 ../0-tools/plot_eng_level
-# or
-plot_eng_level
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212211372.png)
 
 
-You should also be able to get the total energy of $H$ atom via the following command:
+- You should also be able to get the total energy of $H$ atom via the following command:
+
 ```bash
 grep 'free  energy' OUTCAR
 ```
 
 !!! danger ""
 
-    NOTE: there are exactly two spaces between “free” and “energy”.
+    NOTE: there are exactly two spaces between 'free' and 'energy'.
 
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212140017.png)
 
-Let's denote the ground state energy of a single $H$ atom as $E_H$.
+- Let's denote the ground state energy of a single $H$ atom as $E_H$.
 
 
 ---
 
 #### 2.4.2. Relaxation of $H_2$ molecule
 
-Get into the directory
+- Get into the directory
+
 ```bash
-cd ../2-H2-molecule       
+cd ../2-H2-molecule
 # or
-cd ~/MSE6701H/MMMS/3-DFT/4-Bond-Length/2-H2-molecule
+cd ~/MSE6701H/3-DFT/4-Bond-Length/2-H2-molecule
 ```
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Examine the energy level of** $H_2$: Once the job is completed, you should be able to get the energy level via the following command:
+- **Examine the energy level of** $H_2$: Once the job is completed, you should be able to get the energy level via the following command:
+
 ```bash
 ../../0-tools/plot_eng_level
-# or
-plot_eng_level
 ```
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212212195.png)
 
 
-You should also be able to get the total energy of $H$ atom via the following command:
+- You should also be able to get the total energy of $H$ atom via the following command:
+
 ```bash
 grep 'free  energy' OUTCAR | tail -n 1
 ```
 
 !!! danger ""
 
-    NOTE: there are exactly two spaces between “free” and “energy”.
+    NOTE: there are exactly two spaces between 'free' and 'energy'.
 
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212141245.png)
@@ -682,17 +712,16 @@ grep 'free  energy' OUTCAR | tail -n 1
 
 ---
 
-Let's denote the ground state energy of $H_2$ as $E_{H_2}$, the $H-H$ bond energy can be derived as:
+- Let's denote the ground state energy of $H_2$ as $E_{H_2}$, the $H-H$ bond energy can be derived as:
 
 $$
 E_{bond} = E_{H_2} – 2*E_H
 $$
 
-**Bond length and energy of** $H_2$: The bond length and bond energy can be obtained from the final geometry:
+- **Bond length and energy of** $H_2$: The bond length and bond energy can be obtained from the final geometry:
+
 ```bash
 ../../0-tools/get_h2_bondlen_eng
-# or
-get_h2_bondlen_eng
 ```
 
 !!! info ""
@@ -721,7 +750,7 @@ In this example, we will illustrate the calculation of surface energy for Cu(001
  \gamma = \frac{E_{unrelaxed}-N E_{bulk}}{2A} + \frac{E_{relaxed}-E_{unrelaxed}}{A}
  $$
 
-The as-cleaved surface model has two surfaces, and therefore a faction of 2 in the first term of the above equation; while the relaxation is performed only on the top surface, hence no factor of 2 in the second term.
+The as-cleaved surface model has two surfaces, and therefore a factor of 2 in the first term of the above equation; while the relaxation is performed only on the top surface, hence no factor of 2 in the second term.
 
 ---
 
@@ -732,11 +761,12 @@ FCC-Cu(001) 1x1x7+12 Ang vacuum structure:
 
 ---
 
-Get into the directory
+- Get into the directory
+
 ```bash
-cd ../../5-Surface-Energy/                 
+cd ../../5-Surface-Energy/
 # or
-cd ~/MSE6701H/MMMS/3-DFT/5-Surface-Energy/
+cd ~/MSE6701H/3-DFT/5-Surface-Energy/
 ```
 
 !!! danger ""
@@ -744,19 +774,22 @@ cd ~/MSE6701H/MMMS/3-DFT/5-Surface-Energy/
     Please read through all the main input files of vasp, especially `INCARs` and `POSCARs`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-**Work out the surface energy and interlayer distance change**: Once the calculations are done, you can check the `OUTCAR` to confirm the force on each atom, and check the atomic position for the atoms, so as to work out the change in interlayer distance for the surface model. Alternatively, you can also use the script provided to find out the surface energy and the relative change in interlayer distances:
+- **Work out the surface energy and interlayer distance change**: Once the calculations are done, you can check the `OUTCAR` to confirm the force on each atom, and check the atomic position for the atoms, so as to work out the change in interlayer distance for the surface model. Alternatively, you can also use the script provided to find out the surface energy and the relative change in interlayer distances:
+
 ```bash
 ./calculate_surface_energy.sh
 ./calculate_interlayer_deform.sh
@@ -790,11 +823,12 @@ The energies obtained from these calculations can then be used to calculate the 
 
 #### 2.6.1. Static calculation for supercell without vacancy
 
-Get into the directory
+- Get into the directory
+
 ```bash
-cd ../6-Vacancy-formation-energy/1-without-vacancy     
+cd ../6-Vacancy-formation-energy/1-without-vacancy
 # or
-cd ~/MSE6701H/MMMS/3-DFT/6-Vacancy-formation-energy/1-without-vacancy
+cd ~/MSE6701H/3-DFT/6-Vacancy-formation-energy/1-without-vacancy
 ```
 
 !!! danger ""
@@ -802,26 +836,29 @@ cd ~/MSE6701H/MMMS/3-DFT/6-Vacancy-formation-energy/1-without-vacancy
     Please read through all the main input files of vasp, especially `INCAR`、`POSCAR` and `KPOINTS`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-The total energy can be find by:
+- The total energy can be find by:
+
 ```bash
 grep 'free  energy' OUTCAR
 ```
 
 !!! danger ""
 
-    NOTE: there are exactly two spaces between “free” and “energy”.
+    NOTE: there are exactly two spaces between 'free' and 'energy'.
 
 
 ![Snipaste_2023-11-21_20-40-26.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212123593.png)
@@ -831,11 +868,12 @@ grep 'free  energy' OUTCAR
 
 #### 2.6.2. Relaxation and then static calculation for supercell with a vacancy
 
-Get into the directory
+- Get into the directory
+
 ```bash
 cd ../2-with-a-vacancy/
 # or
-cd ~/MSE6701H/MMMS/3-DFT/6-Vacancy-formation-energy/2-with-a-vacancy/
+cd ~/MSE6701H/3-DFT/6-Vacancy-formation-energy/2-with-a-vacancy/
 ```
 
 !!! danger ""
@@ -843,19 +881,22 @@ cd ~/MSE6701H/MMMS/3-DFT/6-Vacancy-formation-energy/2-with-a-vacancy/
     Please read through all the main input files of vasp, especially `INCARs`、`POSCAR` and `KPOINTS`.
 
 
-Check the scripts
+- Check the scripts
+
 ```bash
 cat README
 
 cat job.slurm
 ```
 
-Run the calculation
+- Run the calculation
+
 ```bash
 sbatch job.slurm
 ```
 
-Work out the vacancy formation energy
+- Work out the vacancy formation energy
+
 ```bash
 ./calculate_vacancy_formation_energy.sh
 ```
@@ -870,10 +911,11 @@ Work out the vacancy formation energy
 
 !!! info ""
 
-    This will be your second course project. The due is: **Dec 13th, 2023**.
+    This will be your second course project. The due is: **Jan 22th, 2025**.
 
 
 You can follow the examples of **1-single-point-fcc-Cu** and **2-lattice-constant-fcc-Cu** to finish your homework. The pseudopotential file needed can be obtained by:
+
 ```bash
-cp  ~/MSE6701H/MMMS/3-DFT/0-tools/potcars/POTCAR.Al  POTCAR
+cp  ~/MSE6701H/3-DFT/0-tools/potcars/POTCAR.Al  POTCAR
 ```
