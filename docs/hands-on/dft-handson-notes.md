@@ -136,10 +136,9 @@ tree
 └── run
 ```
 
-!!! danger ""
-
-    Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
-
+:::danger
+Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
+:::
 
 ```bash
 cat README
@@ -161,10 +160,9 @@ grep 'free  energy' OUTCAR
 tail -1 OSZICAR
 ```
 
-!!! danger ""
-
-    NOTE: there are exactly two spaces between 'free' and 'energy'.
-
+:::danger
+NOTE: there are exactly two spaces between 'free' and 'energy'.
+:::
 
 ![Snipaste_2023-11-20_21-14-22.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311202114769.png)
 
@@ -189,10 +187,9 @@ cd ~/MSE6701H/3-DFT/1-Convergence-Tests/2-convergence-k-mesh
 ls -l
 ```
 
-!!! danger ""
-
-    Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
-
+:::danger
+Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
+:::
 
 ```bash
 cat README
@@ -238,10 +235,9 @@ cd ~/MSE6701H/3-DFT/1-Convergence-Tests/3-convergence-ecut
 ls -l
 ```
 
-!!! danger ""
-
-    Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
-
+:::danger
+Please check the content of all the files to have an idea on the calculation. Especially the `README` and `job.slurm`:
+:::
 
 ```bash
 cat README
@@ -314,10 +310,9 @@ cd ../../2-Lattice-Constant/1-FCC-Cu
 cd ~/MSE6701H/3-DFT/2-Lattice-Constant/1-FCC-Cu
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCAR`
-
+:::danger
+Please read through all the main input files of vasp, especially `INCAR`
+:::
 
 - Check the scripts
 
@@ -356,10 +351,9 @@ cd ../2-BCC-Fe
 cd ~/MSE6701H/MMMS/3-DFT/2-Lattice-Constant/2-BCC-Fe
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCAR`
-
+:::danger
+Please read through all the main input files of vasp, especially `INCAR`
+:::
 
 - Check the scripts
 
@@ -411,10 +405,9 @@ cd ../../3-Band-Structure/1-FCC-Cu
 cd ~/MSE6701H/3-DFT/3-Band-Structure/1-FCC-Cu
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`. The three `INCARs` and three `KPOINTSs` correspond to the scf and nscf calculations, respectively.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`. The three `INCARs` and three `KPOINTSs` correspond to the scf and nscf calculations, respectively.
+:::
 
 - Check the scripts
 
@@ -445,10 +438,9 @@ sbatch job.slurm
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212205472.png)
 
-!!! danger ""
-
-    Note: The Fermi energy has been shifted to be zero.
-
+:::danger
+Note: The Fermi energy has been shifted to be zero.
+:::
 
 
 ---
@@ -463,10 +455,9 @@ cd ../2-BCC-Fe
 cd ~/MSE6701H/3-DFT/3-Band-Structure/2-BCC-Fe
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
+:::
 
 - Check the scripts
 
@@ -517,10 +508,9 @@ cd ../3-Graphene/
 cd ~/MSE6701H/3-DFT/3-Band-Structure/3-Graphene
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
+:::
 
 - Check the scripts
 
@@ -575,10 +565,9 @@ cd ../4-Polyhexene/
 cd ~/MSE6701H/3-DFT/3-Band-Structure/4-Polyhexene
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs` and `KPOINTSs`.
+:::
 
 - Check the scripts
 
@@ -631,10 +620,9 @@ cat job.slurm
 sbatch job.slurm
 ```
 
-!!! danger ""
-
-    Note: Since we are calculating a single isolated atom, a large supercell is used, and no periodicity is expected. Therefore we use only the $\Gamma$ k-point. And since the supercell is large, many $\mathbf{G}$ are within the cutoff radius and in turn the calculation will take some time.
-
+:::danger
+Note: Since we are calculating a single isolated atom, a large supercell is used, and no periodicity is expected. Therefore we use only the $\Gamma$ k-point. And since the supercell is large, many $\mathbf{G}$ are within the cutoff radius and in turn the calculation will take some time.
+:::
 
 - **Examine the energy level**: Once the job is completed, you should be able to get the energy level via the following command:
 
@@ -651,10 +639,9 @@ sbatch job.slurm
 grep 'free  energy' OUTCAR
 ```
 
-!!! danger ""
-
-    NOTE: there are exactly two spaces between 'free' and 'energy'.
-
+:::danger
+NOTE: there are exactly two spaces between 'free' and 'energy'.
+:::
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212140017.png)
 
@@ -702,10 +689,9 @@ sbatch job.slurm
 grep 'free  energy' OUTCAR | tail -n 1
 ```
 
-!!! danger ""
-
-    NOTE: there are exactly two spaces between 'free' and 'energy'.
-
+:::danger
+NOTE: there are exactly two spaces between 'free' and 'energy'.
+:::
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212141245.png)
 
@@ -724,10 +710,9 @@ $$
 ../../0-tools/get_h2_bondlen_eng
 ```
 
-!!! info ""
-
-    The experimental bond length and bond energy are about $0.74$ Å and $4.52$ eV, respectively.
-
+:::info
+The experimental bond length and bond energy are about $0.74$ Å and $4.52$ eV, respectively.
+:::
 
 ![Snipaste_2023-11-21_21-37-20.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212137245.png)
 
@@ -769,10 +754,9 @@ cd ../../5-Surface-Energy/
 cd ~/MSE6701H/3-DFT/5-Surface-Energy/
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs` and `POSCARs`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs` and `POSCARs`.
+:::
 
 - Check the scripts
 
@@ -831,10 +815,9 @@ cd ../6-Vacancy-formation-energy/1-without-vacancy
 cd ~/MSE6701H/3-DFT/6-Vacancy-formation-energy/1-without-vacancy
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCAR`、`POSCAR` and `KPOINTS`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCAR`、`POSCAR` and `KPOINTS`.
+:::
 
 - Check the scripts
 
@@ -856,10 +839,9 @@ sbatch job.slurm
 grep 'free  energy' OUTCAR
 ```
 
-!!! danger ""
-
-    NOTE: there are exactly two spaces between 'free' and 'energy'.
-
+:::danger
+NOTE: there are exactly two spaces between 'free' and 'energy'.
+:::
 
 ![Snipaste_2023-11-21_20-40-26.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212123593.png)
 
@@ -876,10 +858,9 @@ cd ../2-with-a-vacancy/
 cd ~/MSE6701H/3-DFT/6-Vacancy-formation-energy/2-with-a-vacancy/
 ```
 
-!!! danger ""
-
-    Please read through all the main input files of vasp, especially `INCARs`、`POSCAR` and `KPOINTS`.
-
+:::danger
+Please read through all the main input files of vasp, especially `INCARs`、`POSCAR` and `KPOINTS`.
+:::
 
 - Check the scripts
 
@@ -909,10 +890,9 @@ sbatch job.slurm
 
 ## 3. DFT Course Project
 
-!!! info ""
-
-    This will be your second course project. The due is: **Jan 22th, 2025**.
-
+:::info
+This will be your second course project. The due is: **Jan 22th, 2025**.
+:::
 
 You can follow the examples of **1-single-point-fcc-Cu** and **2-lattice-constant-fcc-Cu** to finish your homework. The pseudopotential file needed can be obtained by:
 

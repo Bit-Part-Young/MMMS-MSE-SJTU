@@ -86,10 +86,9 @@ notice3: MD project 作业提交截止日期（每学年需更新）
 
 - For the hands-on session and for your homeworks, the Siyuan cluster of HPC, SJTU will be used. **You have been offered a temporary account**, please [click & find it here!](https://wj.sjtu.edu.cn/f/65127f842ad790216935b02c)
 
-!!! danger ""
-
-    Note: this account is used for the course related tasks only. Any abuse will lead to suspension of your previlige to use the superclusters.
-
+:::danger
+Note: this account is used for the course related tasks only. Any abuse will lead to suspension of your previlige to use the superclusters.
+:::
 
 
 
@@ -139,10 +138,9 @@ notice3: MD project 作业提交截止日期（每学年需更新）
 
 - For submitting LAMMPS jobs on Siyuan, please refer to: [LAMMPS - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/lammps.html#id5)
 
-!!! danger ""
-
-    Note: for the jobs in this course, use at most 4 cores for your jobs. i.e., `#SBATCH --ntasks-per-node=4`. In most cases, 1 is good enough.
-
+:::danger
+Note: for the jobs in this course, use at most 4 cores for your jobs. i.e., `#SBATCH --ntasks-per-node=4`. In most cases, 1 is good enough.
+:::
 
 
 ---
@@ -243,10 +241,9 @@ tree -LF 1
 
 ### 2.2. Determination of equilibrium lattice constant of fcc Cu
 
-!!! info ""
-
-    This example illustrates the determination of the equibrium lattice constant of fcc Cu based on the adopted interatomic potential by calculating the total potential energy of the system at a series of volumes and fitting to the volume-energy data to an equation of state.
-
+:::info
+This example illustrates the determination of the equibrium lattice constant of fcc Cu based on the adopted interatomic potential by calculating the total potential energy of the system at a series of volumes and fitting to the volume-energy data to an equation of state.
+:::
 
 - Get into the directory before running the example:
 ```bash
@@ -265,10 +262,9 @@ tree .
 └── scan.sh
 ```
 
-!!! danger ""
-
-    There should be 5 files in this directory. One can examine the `in.lmp` or `scan.sh` to understand the method.
-
+:::danger
+There should be 5 files in this directory. One can examine the `in.lmp` or `scan.sh` to understand the method.
+:::
 
 - To run the example:
 
@@ -304,10 +300,9 @@ more log.lammps
 
 ---
 
-!!! success ""
-
-    According to the fitting results, the cohesive energy for fcc Cu is 3.54 eV/atom, and the lattice constant of fcc Cu based on the adopted potential is 3.615 Angstrom, agreeing perfectly with the experimental value.
-
+:::success
+According to the fitting results, the cohesive energy for fcc Cu is 3.54 eV/atom, and the lattice constant of fcc Cu based on the adopted potential is 3.615 Angstrom, agreeing perfectly with the experimental value.
+:::
 
 ![](https://notes.sjtu.edu.cn/uploads/upload_32033f76fff37dca63c58c10ce45bd62.png)
 
@@ -316,10 +311,9 @@ more log.lammps
 
 ### 2.3. Surface energy calculation
 
-!!! info ""
-
-    The second example illustrates the calculation of the surface energy of fcc Cu (001); the equilibrium bulk energy (3.54 eV/atom) and lattice constant 3.615 Angstrom from example (1) is used here.
-
+:::info
+The second example illustrates the calculation of the surface energy of fcc Cu (001); the equilibrium bulk energy (3.54 eV/atom) and lattice constant 3.615 Angstrom from example (1) is used here.
+:::
 
 - To run this example:
 
@@ -327,10 +321,9 @@ more log.lammps
 cd ~/MSE6701H/2-MolecularDynamics/2-Slab-Relaxation
 ```
 
-!!! danger ""
-
-    Please check the files and understand the method before submitting the job:
-
+:::danger
+Please check the files and understand the method before submitting the job:
+:::
 
 ```bash
 sbatch job.slurm
@@ -346,10 +339,9 @@ tail -n 7 log.lammps
 ![](https://notes.sjtu.edu.cn/uploads/upload_c444647e9449aab7fd593c4e4d0dff9e.png)
 
 
-!!! danger ""
-
-    Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
-
+:::danger
+Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
+:::
 
 
 - Use `interlayer_separations.py` Python script to measure interlayer separations of the (001) surface of fcc Cu: $\Delta d_{12}$ =-1.05%，$\Delta d_{23}$ =-0.33%
@@ -403,10 +395,9 @@ Inerlayer separations info:
 
 ### 2.4. Melting temperature estimation by heating-cooling
 
-!!! info ""
-
-    The 3rd example illustrates the estimation of the melting temperature of fcc Cu by heating and cooling. It also illustrates the usage of thermostat and barostat to monitor of the temperature and pressure of a system.
-
+:::info
+The 3rd example illustrates the estimation of the melting temperature of fcc Cu by heating and cooling. It also illustrates the usage of thermostat and barostat to monitor of the temperature and pressure of a system.
+:::
 
 - To run this example:
 
@@ -414,10 +405,9 @@ Inerlayer separations info:
 cd ~/MSE6701H/2-MolecularDynamics/3-Cu-Heating-Cooling
 ```
 
-!!! danger ""
-
-    Please check the files and understand the method before submitting the job:
-
+:::danger
+Please check the files and understand the method before submitting the job:
+:::
 
 ```bash
 sbatch job.slurm
@@ -435,20 +425,18 @@ squeue
 
 - One can also **analyze the variation of volume as a function of temperature during the heating/cooling cycle to estimate the melting temperature.** **The 1st order phase transformation should be observed from the curves.**
 
-!!! danger ""
-
-    Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
-
+:::danger
+Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
+:::
 
 
 ---
 
 ### 2.5. Melting temperature evaluation by two-phase co-existence method
 
-!!! info ""
-
-    The 4th example illustrates the calculation of the melting temperature of fcc Cu by the two-phase co-existence method. It is a more or less accurate method to determine the melting temperature of a material.
-
+:::info
+The 4th example illustrates the calculation of the melting temperature of fcc Cu by the two-phase co-existence method. It is a more or less accurate method to determine the melting temperature of a material.
+:::
 
 - To run this example:
 
@@ -456,10 +444,9 @@ squeue
 cd ~/MSE6701H/2-MolecularDynamics/4-Cu-Tm-two-phases
 ```
 
-!!! danger ""
-
-    Please check the files and understand the method before submitting the job:
-
+:::danger
+Please check the files and understand the method before submitting the job:
+:::
 
 ```bash
 sbatch job.slurm
@@ -474,20 +461,18 @@ squeue
 
 ![image.png](https://cdn.jsdelivr.net/gh/Bit-Part-Young/BTY-imgs/images/202311212218335.png)
 
-!!! danger ""
-
-    Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
-
+:::danger
+Note: OVITO can be used to visualize the atomic configuration as in `dump.lammpstrj`. For instruction to use ovito with Siyuan, please refer to [OVITO - 上海交大超算平台用户手册 Documentation](https://docs.hpc.sjtu.edu.cn/app/engineeringscience/ovito.html).
+:::
 
 
 ---
 
 ### 2.6. Self-diffusion coefficient calculation from MSD
 
-!!! info ""
-
-    The 5th example illustrates the calculation of the self-diffusion coefficient of fcc Cu at both 300 K and 1800 K. The computation of MSD is employed.
-
+:::info
+The 5th example illustrates the calculation of the self-diffusion coefficient of fcc Cu at both 300 K and 1800 K. The computation of MSD is employed.
+:::
 
 - To run this example:
 
@@ -500,10 +485,9 @@ sbatch job.slurm
 squeue
 ```
 
-!!! danger ""
-
-    Please check the files and understand the method adopted.
-
+:::danger
+Please check the files and understand the method adopted.
+:::
 
 - ==It might take some time for the simulation to be done.== Once the job has been finished, one can **analyze the MSD** by running the script prepared in either `1-300K` or `2-1800K` directory:
 
@@ -516,10 +500,9 @@ squeue
 
 ### 2.7. Dislocation energy and critical shear stress
 
-!!! info ""
-
-    The 6th example illustrates the calculation of dislocation energy and critical shear stress for dislocation motion.
-
+:::info
+The 6th example illustrates the calculation of dislocation energy and critical shear stress for dislocation motion.
+:::
 
 - Examples for both screw and edge dislocation are present.
 
@@ -568,28 +551,25 @@ tree -LF 1
 └── README
 ```
 
-!!! danger ""
-
-    To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
-
+:::danger
+To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
+:::
 
 ```bash
 ./generate_model.sh
 ```
 
-!!! warning ""
+:::warning
+where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
+:::
 
-    where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
-
-
-!!! danger ""
-
-    If you are running this example on your own computer, you should:
+:::danger
+If you are running this example on your own computer, you should:
 
 1. install `atomsk` on your computer;
 
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
-
+:::
 
 - And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
@@ -598,10 +578,9 @@ sbatch job.slurm
 squeue
 ```
 
-!!! danger ""
-
-    But if you are running on your own computer, you can use the following command instead:
-
+:::danger
+But if you are running on your own computer, you can use the following command instead:
+:::
 
 ```bash
 lmp -in in.lmp -sf opt
@@ -630,10 +609,9 @@ grep '^^' log.lammps
 
 ##### 2.7.1.2. Configuration with a dislocation
 
-!!! info ""
-
-    Now we can calculate the energy of the model with a screw dislocation:
-
+:::info
+Now we can calculate the energy of the model with a screw dislocation:
+:::
 
 ```bash
 cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/2-dislocation-relax
@@ -651,28 +629,25 @@ cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/2-dislocation-rel
 └── README
 ```
 
-!!! danger ""
-
-    To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
-
+:::danger
+To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
+:::
 
 ```bash
 ./generate_model.sh
 ```
 
-!!! warning ""
+:::warning
+where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
+:::
 
-    where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
-
-
-!!! danger ""
-
-    If you are running this example on your own computer, you should:
+:::danger
+If you are running this example on your own computer, you should:
 
 1. install `atomsk` on your computer;
 
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
-
+:::
 
 - And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
@@ -681,10 +656,9 @@ sbatch job.slurm
 squeue
 ```
 
-!!! danger ""
-
-    But if you are running on your own computer, you can use the following command instead:
-
+:::danger
+But if you are running on your own computer, you can use the following command instead:
+:::
 
 ```bash
 lmp -in in.lmp -sf opt
@@ -713,10 +687,9 @@ grep '^^' log.lammps
 ./compute_disl_energy.sh
 ```
 
-!!! warning ""
-
-    Where `compute_disl_energy.sh` is another script I wrote for you to calculate the dislocation energy.
-
+:::warning
+Where `compute_disl_energy.sh` is another script I wrote for you to calculate the dislocation energy.
+:::
 
 ![](https://notes.sjtu.edu.cn/uploads/upload_d24c7f6a7d5af5734e632b9e3b24a87a.png)
 
@@ -725,10 +698,9 @@ grep '^^' log.lammps
 
 ##### 2.7.1.3. Critical shear stress measurement
 
-!!! info ""
-
-    To calculate the critical shear stress required for triguing the dislocation motion, one should move into the 3rd directory:
-
+:::info
+To calculate the critical shear stress required for triguing the dislocation motion, one should move into the 3rd directory:
+:::
 
 ```bash
 cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/3-dislocation-shear
@@ -746,28 +718,25 @@ cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/1-screw/3-dislocation-she
 └── README
 ```
 
-!!! danger ""
-
-    To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
-
+:::danger
+To run this calculation, you should generate the atomic model (name `data.lmp`) by using atomsk first:
+:::
 
 ```bash
 ./generate_model.sh
 ```
 
-!!! warning ""
+:::warning
+where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
+:::
 
-    where `generate_model.sh` is a bash script I prepared for your to call `atomsk` and create the atomic model.
-
-
-!!! danger ""
-
-    If you are running this example on your own computer, you should:
+:::danger
+If you are running this example on your own computer, you should:
 
 1. install `atomsk` on your computer;
 
 2. modify `generate_model.sh` by redefining the variable `ATOMSK`. And then you can run the `generate_model.sh`.
-
+:::
 
 - And now you can run the LAMMPS calculation. If you are running on Siyuan cluster, you should use the commands:
 
@@ -776,10 +745,9 @@ sbatch job.slurm
 squeue
 ```
 
-!!! danger ""
-
-    But if you are running on your own computer, you can use the following command instead:
-
+:::danger
+But if you are running on your own computer, you can use the following command instead:
+:::
 
 ```bash
 lmp -in in.lmp -sf opt
@@ -800,10 +768,9 @@ cat Info.dat
 ./compute_critical_stress.sh
 ```
 
-!!! warning ""
-
-    Where `compute_critical_stress.sh` is another script I wrote for you to find the critical (minimum) shear stress for the screw dislocation to move under zero temperature.
-
+:::warning
+Where `compute_critical_stress.sh` is another script I wrote for you to find the critical (minimum) shear stress for the screw dislocation to move under zero temperature.
+:::
 
 ![](https://notes.sjtu.edu.cn/uploads/upload_1302aef0a113dd0edf710121fe4fc7fb.png)
 
@@ -812,10 +779,9 @@ cat Info.dat
 
 #### 2.7.2. Edge dislocation
 
-!!! info ""
-
-    For the edge dislocation, all the procedure should be the same as that for the screw dislocation, but one should move into the directory for the edge dislocation instead:
-
+:::info
+For the edge dislocation, all the procedure should be the same as that for the screw dislocation, but one should move into the directory for the edge dislocation instead:
+:::
 
 ```bash
 cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/2-edge
@@ -845,9 +811,8 @@ cd ~/MSE6701H/2-MolecularDynamics/6-Dislocation-Motion/2-edge
 
 ## 3. Surface Energy Calcucation Homework Content & Requirements
 
-!!! info ""
-
-    Based on the **section 2.2 and 2.3** examples and codes, generate Au(100), Au(110), Au(111) slab models, run minimization at 0K.
+:::info
+Based on the **section 2.2 and 2.3** examples and codes, generate Au(100), Au(110), Au(111) slab models, run minimization at 0K.
 
 a) Calculate their surface energies at 0K.
 
@@ -856,11 +821,10 @@ b) Measure the interlayer separations of the surface, and compare to data in Tab
 c) Write a report on your experiments.
 
 The due is: **Dec 11th, 2024**.
+:::
 
+:::danger
 
-!!! danger ""
-
-    
 Hint:
 
 - Append your LAMMPS script but not the lengthy outputs.
@@ -870,7 +834,7 @@ Hint:
 - If you'd like to create surface configuration correctly, use atomsk tool or ASE `build` module (you can refer `surface_generation_ase.py`, `surface_generation_atomsk.sh` and `in_slab_relaxation.lmp` codes in https://gitee.com/yangsl306/MMMS-MSE-SJTU/tree/main/scripts:). Do not use LAMMPS internal command `lattice` with `orient` keyword ([lattice command — LAMMPS documentation](https://docs.lammps.org/lattice.html))!
 
 - You are advised to **present the surface models (use "Common neighbor analysis" Modification in OVITO) and specific three axes in the report** (You can use OVITO or VESTA to visualize configuration).
-
+:::
 
 
 
@@ -878,10 +842,9 @@ Hint:
 
 ## 4. MD Course Project
 
-!!! info ""
-
-    This will be your first course project. The due is: **Dec 25th, 2024**.
-
+:::info
+This will be your first course project. The due is: **Dec 25th, 2024**.
+:::
 
 - The files needed to complete the MD course project are located in:
 
